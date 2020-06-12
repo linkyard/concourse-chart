@@ -60,6 +60,10 @@ spec:
           image: "{{ .Values.image }}:{{ .Values.imageTag }}"
           {{- end }}
           imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
           securityContext:
             privileged: true
           command:
